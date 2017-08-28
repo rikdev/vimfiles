@@ -1,13 +1,20 @@
+" # Encoding options
+if has('multi_byte')
+  " character encoding used in Vim
+  set encoding=utf-8
+endif
+
+
+" # Get the defaults that most users want
+source $VIMRUNTIME/defaults.vim
+
+
 " # Variables
 let g:user_vimfiles = expand('<sfile>:p:h')
 
 
 " # Options
 " numbering as in :options
-" ## 26 multi-byte characters
-" character encoding used in Vim
-set encoding=utf-8
-
 " ## 1 important
 " key sequence to toggle paste mode
 set pastetoggle=<F12>
@@ -19,8 +26,6 @@ set whichwrap+=<,>,[,]
 " character of a line
 set nostartofline
 
-" show match for partly typed search command
-set incsearch
 " ignore case when using a search pattern
 set ignorecase
 " override 'ignorecase' when pattern has upper case characters
@@ -42,9 +47,6 @@ endif
 " ## 4 displaying text
 " don't long lines wrap
 set nowrap
-" change the way text is displayed
-" "truncate" to show the last line even if it doesn't fit
-set display+=truncate
 
 " don't redraw while executing macros
 set lazyredraw
@@ -60,9 +62,6 @@ set number
 set relativenumber
 
 " ## 5 syntax, highlighting and spelling
-" enable syntax highlighting
-syntax enable
-
 if has('extra_search')
   " highlight all matches for the last used search pattern
   set hlsearch
@@ -77,16 +76,6 @@ if has('syntax')
   let &spellfile=g:user_vimfiles . '/spell/user.'. &encoding . '.add'
 endif
 
-" ## 9 using the mouse
-" list of flags for using the mouse
-set mouse=a
-
-" ## 12 messages and info
-" show (partial) command keys in the status line
-set showcmd
-" show cursor position below each window
-set ruler
-
 " ## 13 selecting text
 " when to start Select mode instead of Visual mode
 set selectmode=key
@@ -94,9 +83,6 @@ set selectmode=key
 set keymodel+=startsel,stopsel
 
 " ## 14 editing text
-" specifies what <BS>, CTRL-W, etc. can do in Insert mode
-set backspace+=indent,eol,start
-
 if has('comments')
   " definition of what comment lines look like
   set comments=
@@ -163,13 +149,8 @@ set autoread
 set cryptmethod=blowfish2
 
 " ## 21 command line editing
-" how many command lines are remembered
-set history=200
-
 " specifies how command line completion works
 set wildmode=list:longest,full
-" command-line completion shows a list of matches
-set wildmenu
 
 " ## 23 running make and jumping to errors
 if has('win32') && has('quickfix') && executable('tee')
@@ -202,9 +183,6 @@ if has('langmap')
 endif
 
 " ## 27 various
-" enable file type detection
-filetype plugin indent on
-
 " enable reading .vimrc/.exrc/.gvimrc in the current directory
 set exrc
 " safer working with script files in the current directory
