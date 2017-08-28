@@ -63,6 +63,24 @@ set spelllang+=ru
 let &spellfile=g:user_vimfiles . 'spell/user.utf-8.add'
 
 
+" ## multiple windows
+" 0, 1 or 2; when to use a status line for the last window
+set laststatus=2
+" alternate format to be used for a status line
+set statusline+=%n\ "buffer number
+set statusline+=%<%f "relative path to the file in the buffer
+set statusline+=%m%r%w\ "[modified flag][readonly flag][preview flag]
+set statusline+=%y "type of file in the buffer
+set statusline+=[%{empty(&fenc)?&enc:&fenc}/%{&ff}] "[fileencoding/fileformat]
+set statusline+=%= "separation point between left and right aligned items
+set statusline+=%(\ %k%)\ \|\ "value of "b:keymap_name" or 'keymap'
+set statusline+=0x%04B\ \|\ "value of character under cursor, in hexadecimal
+set statusline+=Ln\ %-9.(%l/%L%)\ "line number/number of lines,
+"virtual column number/line width
+set statusline+=Col\ %-7.(%v/%{strdisplaywidth(getline('.'))}%)\ "
+set statusline+=%P "percentage through file of displayed window
+
+
 " ## editing text
 " list of flags that tell how automatic formatting works
 " j to where it makes sense, remove a comment leader when joining lines
