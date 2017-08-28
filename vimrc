@@ -77,6 +77,27 @@ if has('syntax')
   let &spellfile=g:user_vimfiles . '/spell/user.'. &encoding . '.add'
 endif
 
+" ## 6 multiple windows
+" 0, 1 or 2; when to use a status line for the last window
+" 2 - always
+set laststatus=2
+
+if has('statusline')
+  " alternate format to be used for a status line
+  set statusline+=%n\ "buffer number
+  set statusline+=%<%f "relative path to the file in the buffer
+  set statusline+=%m%r%w\ "[modified flag][readonly flag][preview flag]
+  set statusline+=%y "type of file in the buffer
+  set statusline+=[%{empty(&fenc)?&enc:&fenc}/%{&ff}] "[fileencoding/fileformat]
+  set statusline+=%= "separation point between left and right aligned items
+  set statusline+=%(\ %k%)\ \|\ "value of "b:keymap_name" or 'keymap'
+  set statusline+=0x%04B\ \|\ "value of character under cursor, in hexadecimal
+  set statusline+=Ln\ %-9.(%l/%L%)\ "line number/number of lines,
+  "virtual column number/line width
+  set statusline+=Col\ %-7.(%v/%{strdisplaywidth(getline('.'))}%)\ "
+  set statusline+=%P "percentage through file of displayed window
+endif
+
 " ## 13 selecting text
 " when to start Select mode instead of Visual mode
 set selectmode=key
