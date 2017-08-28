@@ -1,3 +1,12 @@
+" # Encoding options
+" character encoding used in Vim
+set encoding=utf-8
+
+
+" # Get the defaults that most users want
+source $VIMRUNTIME/defaults.vim
+
+
 " # Variables
 if has('win32')
   let g:user_vimfiles='~/vimfiles'
@@ -7,11 +16,6 @@ endif
 
 
 " # Options
-" ## multi-byte characters
-" character encoding used in Vim
-set encoding=utf-8
-
-
 " ## important
 " key sequence to toggle paste mode
 set pastetoggle=<F12>
@@ -21,8 +25,6 @@ set pastetoggle=<F12>
 " list of flags specifying which commands wrap to another line
 set whichwrap+=<,>,[,]
 
-" show match for partly typed search command
-set incsearch
 " ignore case when using a search pattern
 set ignorecase
 " override 'ignorecase' when pattern has upper case characters
@@ -32,9 +34,6 @@ set smartcase
 " ## displaying text
 " don't long lines wrap
 set nowrap
-" change the way text is displayed
-" "truncate" to show the last line even if it doesn't fit
-set display+=truncate
 
 " don't redraw while executing macros
 set lazyredraw
@@ -51,8 +50,6 @@ set relativenumber
 
 
 " ## syntax, highlighting and spelling
-" enable syntax highlighting
-syntax enable
 " highlight all matches for the last used search pattern
 set hlsearch
 " highlight the screen line of the cursor
@@ -66,22 +63,7 @@ set spelllang+=ru
 let &spellfile=g:user_vimfiles . 'spell/user.utf-8.add'
 
 
-" ## using the mouse
-" list of flags for using the mouse
-set mouse=a
-
-
-" ## messages and info
-" show (partial) command keys in the status line
-set showcmd
-" show cursor position below each window
-set ruler
-
-
 " ## editing text
-" specifies what <BS>, CTRL-W, etc. can do in Insert mode
-set backspace+=indent,eol,start
-
 " list of flags that tell how automatic formatting works
 " j to where it makes sense, remove a comment leader when joining lines
 set formatoptions+=j
@@ -127,13 +109,8 @@ set autoread
 
 
 " ## command line editing
-" how many command lines are remembered
-set history=200
-
 " specifies how command line completion works
 set wildmode=longest:list,full
-" command-line completion shows a list of matches
-set wildmenu
 
 
 " ## running make and jumping to errors
@@ -164,9 +141,6 @@ set langmap=№;#,
 	\ЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;~QWERTYUIOP{}ASDFGHJKL:\"ZXCVBNM<>
 
 " ## various
-" enable file type detection
-filetype plugin indent on
-
 " enable reading .vimrc/.exrc/.gvimrc in the current directory
 set exrc
 " safer working with script files in the current directory
