@@ -197,6 +197,12 @@ endif
 set debug=throw
 
 
+" # Add optional default packages
+" the matchit plugin makes the % command work better,
+" but it is not backwards compatible
+packadd! matchit
+
+
 " # Load extended config parts
 runtime! vimrc.d/**/*.vim
 
