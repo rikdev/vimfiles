@@ -74,7 +74,6 @@ set statusline+=%y "type of file in the buffer
 set statusline+=[%{empty(&fenc)?&enc:&fenc}/%{&ff}] "[fileencoding/fileformat]
 set statusline+=%= "separation point between left and right aligned items
 set statusline+=%(\ %k%)\ \|\ "value of "b:keymap_name" or 'keymap'
-set statusline+=0x%04B\ \|\ "value of character under cursor, in hexadecimal
 set statusline+=Ln\ %-9.(%l/%L%)\ "line number/number of lines,
 "virtual column number/line width
 set statusline+=Col\ %-7.(%v/%{strdisplaywidth(getline('.'))}%)\ "
