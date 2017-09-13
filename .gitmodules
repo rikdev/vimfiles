@@ -1,0 +1,5 @@
+[submodule "pack/junegunn/opt/vim-plug/plugin"]
+	path = pack/junegunn/opt/vim-plug/plugin
+	url = https://github.com/junegunn/vim-plug.git
+	branch = master
+	update = rebase
