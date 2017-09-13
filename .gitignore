@@ -5,3 +5,4 @@ spell/
 vimrc.d/local/
 GetLatest/**
 !GetLatest/GetLatestVimScripts.dat
+plugged/
