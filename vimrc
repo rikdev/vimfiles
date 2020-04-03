@@ -152,9 +152,6 @@ if has('folding')
   set foldlevelstart=99
   " width of the column used to indicate folds
   set foldcolumn=1
-  " folding type: "manual", "indent", "expr", "marker" or "syntax"
-  " syntax - syntax highlighting items specify folds.
-  set foldmethod=syntax
 endif
 
 " ## 19 reading and writing files
