@@ -1,3 +1,11 @@
+" # Guards
+" When started as "evim", evim.vim will already have done these settings, bail
+" out.
+if v:progname =~? "evim"
+  finish
+endif
+
+
 " # Encoding options
 if has('multi_byte')
   " character encoding used in Vim
